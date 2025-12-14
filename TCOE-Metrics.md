@@ -175,11 +175,58 @@
 - Documentation: 6 major files created
 
 **Next Steps (Day 3):**
-- [ ] Initialize Git repository
-- [ ] Create .gitignore file
-- [ ] First commit with all current work
-- [ ] Update metrics tracking
-- [ ] Plan Week 2 activities
+- [x] Initialize Git repository - COMPLETED
+- [x] Create .gitignore file - COMPLETED
+- [x] First commit with all current work - COMPLETED
+- [x] Push to GitHub - COMPLETED
+- [x] Update metrics tracking - COMPLETED
+- [ ] Plan Week 2 activities (Git branching, CI/CD)
+
+---
+
+### Day 2 (Continued) - GitHub Integration
+
+**Additional Completed:**
+- ✅ Git repository initialized
+- ✅ Git user configuration (Sameer Chauhan)
+- ✅ First commit created (9cbdbb8)
+- ✅ GitHub repository created: tcoe-automation-framework
+- ✅ Personal access token configured
+- ✅ Code pushed to GitHub successfully
+- ✅ Removed duplicate aClass.java file
+- ✅ VS Code test configuration updated
+- ✅ Repository now public on GitHub
+
+**GitHub Repository:**
+- URL: https://github.com/sameercancodewell-max/tcoe-automation-framework
+- Branch: main
+- Commits: 1
+- Files: 29
+- Size: 84.23 KB
+
+**Learnings:**
+
+*Git & Version Control:*
+- Git init creates local repository only (not remote)
+- GitHub Personal Access Token required for authentication (not password)
+- Token can be embedded in remote URL for push: https://TOKEN@github.com/...
+- git remote set-url to update remote repository URL
+- Important to remove token from config after push for security
+- git push -u origin main sets upstream tracking branch
+
+*VS Code Java Extension:*
+- Test Explorer requires CodeLens enabled to show Run/Debug links
+- Java Language Server workspace needs periodic cleaning
+- Full compilation vs incremental compilation affects test detection
+- Test discovery can be flaky, Gradle commands more reliable
+- .vscode/settings.json controls Java runtime and test configuration
+
+**Next Steps (Week 2 Day 1):**
+- [ ] Learn Git branching (feature branches)
+- [ ] Practice merge conflicts
+- [ ] Set up branch protection rules
+- [ ] Create pull request workflow
+- [ ] Plan GitHub Actions CI/CD
 
 **TV Dashboard URLs:**
 - JaCoCo Coverage: `http://192.168.1.71:8080/app/build/reports/jacoco/index.html`
