@@ -76,14 +76,15 @@ jacocoTestReport {
     reports {
         xml.required = true
         html.required = true
-        html.outputLocation = file("C:\\AutomationProject\\java\\app\\build\\reports\\jacoco")
+        // Use default JaCoCo path structure
     }
     
     doLast {
         println "📊 Code Coverage Report Generated!"
-        println "HTML Report: C:\\AutomationProject\\java\\app\\build\\reports\\jacoco\\index.html"
+        def reportPath = file("${buildDir}/reports/jacoco/test/html/index.html")
+        println "HTML Report: ${reportPath.absolutePath}"
         if (System.getProperty('os.name').toLowerCase().contains('windows')) {
-            "cmd /c start C:\\AutomationProject\\java\\app\\build\\reports\\jacoco\\index.html".execute()
+            "cmd /c start ${reportPath.absolutePath}".execute()
         }
     }
 }
