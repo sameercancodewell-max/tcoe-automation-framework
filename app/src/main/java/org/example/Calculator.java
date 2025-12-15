@@ -19,7 +19,6 @@ public final class Calculator {
             throw new ArithmeticException("Division by zero is not allowed.");
         }
         return a/b;
-        
     }
 
     public int modulo(int a, int b){
