@@ -51,10 +51,12 @@ tasks.named('test') {
     // Generate JaCoCo coverage report after tests
     finalizedBy jacocoTestReport
     
-    // Automatically open test report after tests complete  
+    // Automatically open test report after tests complete (Windows only)
     doLast {
-        println "\n📊 Opening test report in browser..."
-        "cmd /c start C:\\AutomationProject\\java\\app\\build\\reports\\tests\\test\\index.html".execute()
+        if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+            println "\n📊 Opening test report in browser..."
+            "cmd /c start C:\\AutomationProject\\java\\app\\build\\reports\\tests\\test\\index.html".execute()
+        }
     }
 }
 
@@ -80,6 +82,8 @@ jacocoTestReport {
     doLast {
         println "📊 Code Coverage Report Generated!"
         println "HTML Report: C:\\AutomationProject\\java\\app\\build\\reports\\jacoco\\index.html"
-        "cmd /c start C:\\AutomationProject\\java\\app\\build\\reports\\jacoco\\index.html".execute()
+        if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+            "cmd /c start C:\\AutomationProject\\java\\app\\build\\reports\\jacoco\\index.html".execute()
+        }
     }
 }
