@@ -35,9 +35,14 @@ public final class Calculator {
         }
         return Math.sqrt(number);
     }
-    
+
     // Feature branch: Adding power operation
     public double power(double base, double exponent){
         return Math.pow(base, exponent);
+    }
+
+    // New feature: Calculate absolute value
+    public int absoluteValue(int number){
+        return Math.abs(number);
     }
 }
