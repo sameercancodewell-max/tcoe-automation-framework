@@ -27,4 +27,12 @@ public final class Calculator {
         }
         return a % b;
     }
+
+    // Main branch: Adding square root operation
+    public double squareRoot(double number){
+        if(number < 0){
+            throw new ArithmeticException("Cannot calculate square root of negative number.");
+        }
+        return Math.sqrt(number);
+    }
 }
