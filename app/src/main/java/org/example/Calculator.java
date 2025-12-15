@@ -27,4 +27,9 @@ public final class Calculator {
         }
         return a % b;
     }
+
+    // Feature branch: Adding power operation
+    public double power(double base, double exponent){
+        return Math.pow(base, exponent);
+    }
 }
