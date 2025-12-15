@@ -109,6 +109,27 @@ public class aClassTest {
     }
 
 
+    @Test
+    @Tag("critical")
+    @Story("Modulo Operation")
+    @Description("Verify that modulo operation returns correct remainder")
+    @Severity(SeverityLevel.NORMAL)
+    void testModuloOperation(){
+        assertEquals(1, calc.modulo(10, 3), "10 % 3 should equal 1");
+        assertEquals(0, calc.modulo(10, 5), "10 % 5 should equal 0");
+        assertEquals(2, calc.modulo(17, 5), "17 % 5 should equal 2");
+    }
+
+    @Test
+    @Tag("critical")
+    @Story("Modulo Operation")
+    @Description("Verify that modulo by zero throws ArithmeticException")
+    @Severity(SeverityLevel.CRITICAL)
+    void testModuloByAZero(){
+        assertThrows(ArithmeticException.class, () -> calc.modulo(6, 0) ,"Modulo by zero should throw ArithmeticException");
+    }
+
+
     @AfterEach
     void teardown(){
         // Teardown code if needed

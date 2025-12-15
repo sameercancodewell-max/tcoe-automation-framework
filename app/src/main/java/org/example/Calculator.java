@@ -20,4 +20,11 @@ public final class Calculator {
         }
         return a/b;
     }
+
+    public int modulo(int a, int b){
+        if(b==0){
+            throw new ArithmeticException("Modulo by zero is not allowed.");
+        }
+        return a % b;
+    }
 }
