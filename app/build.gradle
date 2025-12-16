@@ -13,7 +13,7 @@ plugins {
     // Apply the Allure plugin for enterprise test reporting
     id 'io.qameta.allure' version '2.11.2'
     // Apply the SonarQube plugin for code quality analysis
-    id 'org.sonarqube' version '5.1.0.4882'
+    id 'org.sonarqube' version '4.4.1.3373'
 }
 
 repositories {
