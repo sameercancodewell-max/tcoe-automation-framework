@@ -102,6 +102,10 @@ jobs:
                 .report-card h2 { margin-top: 0; color: #4CAF50; }
                 .report-card a { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
                 .report-card a:hover { background: #45a049; }
+                .report-card.external { border-left-color: #FF9800; }
+                .report-card.external h2 { color: #FF9800; }
+                .report-card.external a { background: #FF9800; }
+                .report-card.external a:hover { background: #F57C00; }
                 .footer { text-align: center; margin-top: 40px; color: #999; font-size: 14px; }
             </style>
         </head>
@@ -120,6 +124,12 @@ jobs:
                     <h2>🎯 Test Execution Report (Allure)</h2>
                     <p>Beautiful test results with history and trends</p>
                     <a href="allure/index.html">View Allure Report →</a>
+                </div>
+                
+                <div class="report-card external">
+                    <h2>🔍 Code Quality Report (SonarCloud)</h2>
+                    <p>Code quality metrics, security issues, and technical debt analysis</p>
+                    <a href="https://sonarcloud.io/summary/overall?id=sameercancodewell-max_tcoe-automation-framework&branch=main" target="_blank">View SonarCloud Report →</a>
                 </div>
                 
                 <div class="footer">
