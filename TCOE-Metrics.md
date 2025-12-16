@@ -547,3 +547,43 @@
 **Last Updated:** December 16, 2025 - 8:00 PM
 **Next Review:** December 17, 2025
 **Current Status:** ✅ Step 1 Complete - Reporting infrastructure established with SonarCloud, GitHub Pages, and unified dashboard
+
+---
+
+## Week 2: Docker, Selenium Grid, and Database Integration (Dec 16, 2025)
+
+### New Infrastructure Added
+
+- **docker-compose.yml** created to orchestrate Selenium Grid (hub + Chrome node) and Postgres database for integration and E2E testing.
+- Verified all containers start and are healthy using `docker-compose ps` and Docker Desktop UI.
+- Troubleshot and resolved issues with containers not starting (checked logs, fixed environment variables, and restarted services as needed).
+- Documented common issues: Docker daemon not running, container exit codes, and configuration cache conflicts in Gradle.
+- Automated workflow: Now possible to start all services, run tests, and tear down with a single script or CI/CD pipeline.
+
+### Automation Workflow Example
+```powershell
+docker-compose up -d
+./gradlew test --no-configuration-cache
+docker-compose down
+```
+Or in CI/CD (GitHub Actions):
+```yaml
+- name: Start services
+  run: docker-compose up -d
+- name: Run tests
+  run: ./gradlew test --no-configuration-cache
+- name: Stop services
+  run: docker-compose down
+```
+
+### Benefits
+- Consistent, reproducible test environment for all contributors and CI/CD.
+- Easy onboarding: one command to start all dependencies.
+- Supports integration and E2E tests with Selenium Grid and database.
+- Foundation for future expansion (add more services, scale nodes, etc.).
+
+### Next Steps
+- Add TestNG and Selenium-based tests to leverage the new infrastructure.
+- Expand docker-compose.yml as needed for additional services (e.g., API mocks, more browsers).
+
+---
