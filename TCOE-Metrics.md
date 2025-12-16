@@ -402,48 +402,95 @@
 
 **Blockers/Issues:**
 - Session lost, but recovered successfully with documented metrics
-- Need to accelerate dependency addition to stay on track
+
+**Learning Approach Adjusted:**
+- Shifted to incremental "one thing at a time" approach
+- Focus on completing each component before moving to next
+- Prevents overwhelm and ensures deep understanding
 
 ---
 
 ## Week 2 Planning (Starting December 16, 2025)
 
-### Week 2 Goals:
-1. **Add All Automation Dependencies** 
-   - Selenium, TestNG, Cucumber, RestAssured, Appium
-   - Data libraries (POI, Gson, DB connectors)
-   - Target: All dependencies resolved by Day 2
+### Week 2 Approach: One Thing at a Time ⭐
+*Focus on completing each step fully before moving to the next*
 
-2. **Create Framework Structure**
-   - Package structure: driver/, pages/, tests/, utils/, hooks/, runners/
-   - WebDriver singleton pattern
-   - Base Page class
-   - Target: Framework skeleton by Day 3
+### Current Focus: Reporting & Code Quality Setup
 
-3. **Python Parallel Track**
-   - Create python/ folder structure
-   - requirements.txt with parallel dependencies
-   - Virtual environment setup
-   - Target: Python environment ready by Day 4
+#### Step 1: SonarCloud Integration (Day 1) 🔄 IN PROGRESS
+**Goal:** Replace Codecov with SonarCloud for better code quality insights
 
-4. **Enhanced Documentation**
-   - TCOE Strategy document
-   - Test Automation Strategy
-   - Framework Development Strategy
-   - KPI tracking dashboard (Excel/Google Sheets)
-   - Target: Strategic docs complete by Day 5
+**Tasks:**
+- [x] Add SonarQube plugin to build.gradle
+- [x] Configure SonarCloud properties
+- [x] Update CI workflow to run SonarCloud scan
+- [ ] Sign up for SonarCloud account
+- [ ] Create project in SonarCloud
+- [ ] Generate SonarCloud token
+- [ ] Add SONAR_TOKEN to GitHub Secrets
+- [ ] Test SonarCloud integration in CI/CD
+- [ ] Review SonarCloud dashboard features
 
-### Week 2 KPIs:
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Dependencies Added | 15+ libraries | Count in build.gradle |
-| Framework Packages Created | 6+ packages | Folder count |
-| Python Setup Complete | Yes | Virtual env + requirements.txt |
-| Documentation Pages | 4+ strategy docs | File count |
-| Build Time | < 60 sec (with new deps) | Gradle build duration |
-| First Selenium Test | 1 test | Working browser automation |
+**Why SonarCloud First:**
+- Better UI than Codecov
+- Shows code quality + coverage + security
+- Enterprise-grade reporting for TCOE
+- Free for open source
+- Integrated dashboards
+
+**Success Criteria:**
+- ✅ SonarCloud badge showing on GitHub
+- ✅ Code coverage visible in SonarCloud
+- ✅ Quality gates passing
+- ✅ CI/CD pipeline green
 
 ---
 
-**Last Updated:** December 16, 2025
+### Next Steps (After SonarCloud):
+
+#### Step 2: TestNG Addition (Day 2)
+- Add TestNG dependency
+- Write sample TestNG test
+- Configure parallel execution
+- Compare with JUnit
+
+#### Step 3: Selenium WebDriver (Days 3-4)
+- Add Selenium + WebDriverManager
+- Create first browser automation test
+- Implement WebDriver singleton pattern
+- Test cross-browser capability
+
+#### Step 4: Framework Structure (Day 5)
+- Create package structure (driver/, pages/, utils/)
+- Implement Base Page class
+- Add configuration management
+
+#### Step 5: API Testing with RestAssured (Week 3)
+- Add RestAssured dependency
+- Create API test examples
+- JSON/XML validation
+
+#### Step 6: Cucumber BDD (Week 3)
+- Add Cucumber dependencies
+- Write feature files
+- Implement step definitions
+
+*Additional steps (Mobile, DB, Python) will be planned after foundation is solid*
+
+---
+
+### Updated Week 2 KPIs:
+| Metric | Target | Measurement |
+|--------|--------|-------------|
+| SonarCloud Integration | Complete | Dashboard visible |
+| Code Quality Score | A rating | SonarCloud grade |
+| Build Success Rate | >95% | Successful builds / Total |
+| Test Pass Rate | 100% | All tests green |
+| Learning Velocity | 1 major feature/day | Completed integrations |
+| Documentation Updates | Daily | Metrics file updated |
+
+---
+
+**Last Updated:** December 16, 2025 - 4:30 PM
 **Next Review:** December 17, 2025
+**Current Status:** Setting up SonarCloud

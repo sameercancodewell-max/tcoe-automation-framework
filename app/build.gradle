@@ -12,6 +12,8 @@ plugins {
     id 'jacoco'
     // Apply the Allure plugin for enterprise test reporting
     id 'io.qameta.allure' version '2.11.2'
+    // Apply the SonarQube plugin for code quality analysis
+    id 'org.sonarqube' version '6.0.1.5171'
 }
 
 repositories {
@@ -22,7 +24,6 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
-
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     
     // Allure reporting dependencies
@@ -86,5 +87,19 @@ jacocoTestReport {
         if (System.getProperty('os.name').toLowerCase().contains('windows')) {
             "cmd /c start ${reportPath.absolutePath}".execute()
         }
+    }
+}
+
+// SonarQube configuration for code quality analysis
+sonar {
+    properties {
+        property "sonar.projectKey", "sameercancodewell-max_tcoe-automation-framework"
+        property "sonar.organization", "sameercancodewell-max"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.sources", "src/main/java"
+        property "sonar.tests", "src/test/java"
+        property "sonar.java.binaries", "build/classes"
+        property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.junit.reportPaths", "build/test-results/test"
     }
 }
