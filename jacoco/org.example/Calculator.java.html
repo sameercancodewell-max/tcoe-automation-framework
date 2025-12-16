@@ -30,20 +30,20 @@
 
     // Main branch: Adding square root operation
     public double squareRoot(double number){
-<span class="nc bnc" id="L33" title="All 2 branches missed.">        if(number &lt; 0){</span>
-<span class="nc" id="L34">            throw new ArithmeticException(&quot;Cannot calculate square root of negative number.&quot;);</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if(number &lt; 0){</span>
+<span class="fc" id="L34">            throw new ArithmeticException(&quot;Cannot calculate square root of negative number.&quot;);</span>
         }
-<span class="nc" id="L36">        return Math.sqrt(number);</span>
+<span class="fc" id="L36">        return Math.sqrt(number);</span>
     }
 
     // Feature branch: Adding power operation
     public double power(double base, double exponent){
-<span class="nc" id="L41">        return Math.pow(base, exponent);</span>
+<span class="fc" id="L41">        return Math.pow(base, exponent);</span>
     }
 
     // New feature: Calculate absolute value
     public int absoluteValue(int number){
-<span class="nc" id="L46">        return Math.abs(number);</span>
+<span class="fc" id="L46">        return Math.abs(number);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
