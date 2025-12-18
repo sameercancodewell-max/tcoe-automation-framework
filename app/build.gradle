@@ -56,8 +56,11 @@ tasks.register('allureReport') {
             return
         }
         println "Generating Allure report..."
-        def proc = ["cmd", "/c", "allure generate allure-results --clean -o build/allure-report"].execute()
-        proc.waitForProcessOutput(System.out, System.err)
+        if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
+            ["cmd", "/c", "allure generate allure-results --clean -o build/allure-report"].execute().waitForProcessOutput(System.out, System.err)
+        } else {
+            ["allure", "generate", "allure-results", "--clean", "-o", "build/allure-report"].execute().waitForProcessOutput(System.out, System.err)
+        }
         println "Allure report generated at ${allureReportDir.absolutePath}"
         println "\nTo view the Allure report with full functionality, run:"
         println "    cd app"
