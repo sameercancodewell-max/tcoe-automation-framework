@@ -67,8 +67,7 @@ jobs:
         name: coverage-report
         path: app/build/reports/jacoco/test/html/
 
-    - name: Setup Allure
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    - name: Setup Allure CLI
       run: |
         wget https://github.com/allure-framework/allure2/releases/download/2.24.0/allure-2.24.0.tgz
         tar -zxvf allure-2.24.0.tgz
