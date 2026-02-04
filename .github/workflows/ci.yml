@@ -5,6 +5,7 @@ on:
     branches: [ main, feature/* ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,6 +25,14 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+
+    - name: Setup Allure CLI
+      run: |
+        wget https://github.com/allure-framework/allure2/releases/download/2.24.0/allure-2.24.0.tgz
+        tar -zxvf allure-2.24.0.tgz
+        sudo mv allure-2.24.0 /opt/allure
+        sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+        allure --version
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -67,8 +76,7 @@ jobs:
         name: coverage-report
         path: app/build/reports/jacoco/test/html/
 
-    - name: Setup Allure
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    - name: Setup Allure CLI
       run: |
         wget https://github.com/allure-framework/allure2/releases/download/2.24.0/allure-2.24.0.tgz
         tar -zxvf allure-2.24.0.tgz
